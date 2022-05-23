@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir -m ug+rwx my_dir
+mkdir -m ug+7 my_dir
