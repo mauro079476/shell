@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Display Best school 10 times, using for loop (while and until are forbidden)
-$for i in {1..10}
+$i
+for i in {1..10}
 do
 	echo "Best School"
 done
