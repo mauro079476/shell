@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Display the content of the current directory in a list format, Where only the part of the name after the first dash is displayed
+for M in *
+do	
+      	#ls -l | rev | cut -d " " -f "1" | cut -d "-" -f 1 | rev
+	echo "$M" | cut -d "-" -f 2 
+done
