@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-Display Best School ten times using, while loop (for and until are forbidden)
+#Display Best School ten times using, while loop (for and until are forbidden)
+n=1
 while [ $n -le 10 ]
 do
 echo "Best School"
