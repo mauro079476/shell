@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Displays Best School 10 times using until loop (for and while are forbidden)
 a=0
-until [ $a -lt 10 ]
+until [ ! $a -lt 10 ]
 do
 echo "Best School"
-(( $a++ ))
+(( a++ ))
 done
