@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #Process and PID file
 touch /var/run/myscript.pid
-pgrep -f /var/run/myscript.pid > /var/run/myscript.pid
+pgrep -f /var/run/myscript.pid > /var/run/ex9
+mv /var/run/ex9 /var/run/myscript.pid
 while true
 do
 		echo To infinity and beyond
@@ -9,5 +10,7 @@ do
 		echo I hate the kill command
 			trap -arg SIGINT
 		echo Y U no love me?!
+			trap -arg SIGQUIT SIGTERM
 				rm /var/run/myscript.pid
+				kill $"(pgrep -f .//var/run/myscript.pid)"
 done
