@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #Process and PID file
-touch /var/run/myscript.pid
-pgrep -f /var/run/myscript.pid > /var/run/ex9
-mv /var/run/ex9 /var/run/myscript.pid
+echo $$ > /var/run/myscript.pidZZ
 while true
 do
 		echo To infinity and beyond
