@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 #Process and PID file
-echo $$ > /var/run/myscript.pidZZ
+touch /var/run/myscript.pid
+pgrep -f /var/run/myscript.pid > /var/run/archivotemp
+cp /var/run/archivotemp /var/run/myscript.pid
+rm /var/run/archivotemp
+
+trap "echo I hate the kill command; rm /var/run/myscript.pid; pkill -f /var/run/myscript.pid" SIGTERM
+trap "echo Y U no love me ?!" SIGINT
+trap "rm /var/run/myscript.pid; pkill -f /var/run/myscript.pid" SIGQUIT
+
 while true
 do
-		echo To infinity and beyond
-			trap -arg SIGTERM
-		echo I hate the kill command
-			trap -arg SIGINT
-		echo Y U no love me?!
-			trap -arg SIGQUIT SIGTERM
-				rm /var/run/myscript.pid
-				kill $"(pgrep -f .//var/run/myscript.pid)"
-done
+		printf "%s\n" "To infinity and beyond"
+	done
